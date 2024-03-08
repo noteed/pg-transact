@@ -94,6 +94,7 @@ test-suite pg-transact-test
     , TupleSections
     , ViewPatterns
     , QuasiQuotes
+  build-tools: postgresql
 
 source-repository head
   type:     git
