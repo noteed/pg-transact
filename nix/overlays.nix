@@ -6,14 +6,14 @@
 let
 
   sources = import ./sources.nix;
-  # inherit (sources) xxx;
+  inherit (sources) tmp-postgres;
 
   getOverlays = pkg : import "${pkg}/nix/overlays.nix";
 
   # We can overlay Haskell packages here.
   haskellOverlays =
     []
-    # ++ getOverlays xxx
+    ++ getOverlays tmp-postgres
     ;
 
 in haskellOverlays ++ [ (import ./overlay.nix) ]
